@@ -1,0 +1,39 @@
+---
+const socialMedia = [
+  { name: 'Facebook', url: 'https://facebook.com', icon: 'fab fa-facebook' },
+  { name: 'Instagram', url: 'https://instagram.com', icon: 'fab fa-instagram' },
+  { name: 'Twitter', url: 'https://twitter.com', icon: 'fab fa-twitter' },
+];
+---
+<footer class="bg-gray-800 text-white mt-8">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <h2 class="text-2xl font-bold">Nuestro Restaurante</h2>
+        <p class="mt-2">Deliciosa comida, ambiente acogedor</p>
+      </div>
+      <div class="flex flex-col md:flex-row md:space-x-4">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-lg font-semibold mb-2">Contacto</h3>
+          <p>Teléfono: (123) 456-7890</p>
+          <p>Email: info@nuestrorestaurante.com</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Dirección</h3>
+          <p>123 Calle Principal</p>
+          <p>Ciudad, País 12345</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center space-x-4">
+      {socialMedia.map((platform) => (
+        <a href={platform.url} target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-400">
+          <i class={platform.icon}></i>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 text-center text-sm">
+      <p>&copy; 2023 Nuestro Restaurante. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

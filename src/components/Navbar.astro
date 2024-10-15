@@ -1,0 +1,33 @@
+---
+const { class: className } = Astro.props;
+const navItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Sobre Nosotros', url: '/about' },
+  { name: 'Nuestros Platos', url: '/dishes' },
+  { name: 'Reservaciones', url: '/reservations' },
+];
+---
+
+<nav class="bg-white shadow-lg ${className}">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between">
+      <div class="flex space-x-7">
+        <div>
+          <a href="/" class="flex items-center py-4 px-2">
+            <img src="/logo.png" alt="Logo" class="h-8 mr-2">
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-1">
+        {navItems.map((item) => (
+          <a
+            href={item.url}
+            class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>

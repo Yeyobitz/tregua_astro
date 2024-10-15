@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const dishes = [
+  { name: 'Plato 1', description: 'Descripción del plato 1', price: '$15.99', image: '/dish1.jpg' },
+  { name: 'Plato 2', description: 'Descripción del plato 2', price: '$18.99', image: '/dish2.jpg' },
+  { name: 'Plato 3', description: 'Descripción del plato 3', price: '$21.99', image: '/dish3.jpg' },
+  // Añade más platos aquí
+];
+---
+
+<Layout title="Nuestros Platos">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Nuestros Platos</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {dishes.map((dish) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src={dish.image} alt={dish.name} class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h2 class="text-xl font-semibold mb-2">{dish.name}</h2>
+            <p class="text-gray-600 mb-4">{dish.description}</p>
+            <p class="text-green-500 font-bold">{dish.price}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
